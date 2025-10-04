@@ -39,6 +39,16 @@ Aquí una captura de pantalla de como debería verse la terminal mientras descar
 
  ![Instalación de Alpine](Imagenes/1.png)
 
+Para saber si la imagen se instaló correctamente en nuestro equipo se utiliza el siguiente comando:
+    
+```bash
+docker images
+```
+<br><br>
+Aquí una captura de pantalla:
+
+ ![Instalación de Alpine](Imagenes/2.png)
+
 <br><br>
 ## Instalación de WordPress
 Crea el directorio de Instalación y descarga los archivos de **[WordPress.org](https://wordpress.org)**:
@@ -236,4 +246,5 @@ Project Link: [https://github.com/CabbaGG2/PSP_InstalacionWordPress](https://git
 ## Documentación
 
 * [Instala y Configura WordPress](https://ubuntu.com/tutorials/install-and-configure-wordpress#8-write-your-first-post)
+
 
