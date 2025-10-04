@@ -10,7 +10,7 @@ En este README se explicará brevemente a través de la linea de comandos como i
 
 * [Descarga e Instalación de la imagen de "Alpine"](#Descarga-e-Instalación-de-la-imagen-de-"Alpine")
 
-* [Instalación de WordPress](#Instalación-de-WordPress)
+* [Creación de contenedor con Alpine](#Creación-de-contenedor-con-Alpine)
 
 * [Configurar Apache para WordPress](#Configurar-Apache-para-WordPress)
 
@@ -50,19 +50,33 @@ Aquí una captura de pantalla:
  ![Instalación de Alpine](Imagenes/2.png)
 
 <br><br>
-## Instalación de WordPress
-Crea el directorio de Instalación y descarga los archivos de **[WordPress.org](https://wordpress.org)**:
+## Creación de contenedor con Alpine
+Para crear el contenedor de Alpine sin nombre utilizamos el comando:
 
 ```bash
-sudo mkdir -p /srv/www
-sudo chown www-data: /srv/www
-curl https://wordpress.org/latest.tar.gz | sudo -u www-data tar zx -C /srv/www
+docker run -it alpine
 ```
 
 <br><br>
 Captura de pantalla de como se ve el comando en la terminal:
 
- ![Instalación de WordPress](imagenes/2.png)
+ ![Creación de contenedor](Imagenes/3.png)
+ <br><br>
+Como podemos observar en la foto, el contenedor arranca automaticamente.
+
+<br><br>
+Para averiguar cual es el nombre del contenedor que se creó utilizamos el comando:
+
+```bash
+docker ps -a
+```
+
+Esto nos muestra todos los contenedores creados con sus respectivas imagenes, y su estatus actual ya sea que esten corriendo o apagados.
+En este ejemplo el contener de alpine se llama "cool_hypatia"
+<br><br>
+Captura de pantalla de como se ve la terminal con el comando:
+ ![Creación de contenedor](Imagenes/4.png)
+ <br><br>
 
  ## Configurar Apache para WordPress
 
@@ -246,5 +260,6 @@ Project Link: [https://github.com/CabbaGG2/PSP_InstalacionWordPress](https://git
 ## Documentación
 
 * [Instala y Configura WordPress](https://ubuntu.com/tutorials/install-and-configure-wordpress#8-write-your-first-post)
+
 
 
