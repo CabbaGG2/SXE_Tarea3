@@ -1,14 +1,14 @@
-## Instalación de Servicio WordPress
-En este README se explicará brevemente como realizar todos los pasos necesarios para realizar una puesta en marcha de un servicio WordPress.
+## Instalación de Servicio con Docker
+En este README se explicará brevemente a través de la linea de comandos como instalar la imagen de Alpine, crear distintos contenedores que corran dicha imagen y probar la conexión entre ellas con la herramienta Docker.
 
 
 
 
 ## Índice
 
-* [Descripción General](#Instalación-de-Servicio-WordPress)
+* [Descripción General](#Instalación-de-Servicio-con-Docker)
 
-* [Instalación de Dependencias](#Instalación-de-Dependencias)
+* [Descarga e Instalación de la imagen de "Alpine"](#Descarga-e-Instalación-de-la-imagen-de-"Alpine")
 
 * [Instalación de WordPress](#Instalación-de-WordPress)
 
@@ -27,31 +27,17 @@ En este README se explicará brevemente como realizar todos los pasos necesarios
 * [Documentación](#Documentación)
 
 
-## Instalación de Dependencias
+## Descarga e Instalación de la imagen de "Alpine"
 
-Para instalar Apache y PHP se tienen que utilizar los siguientes comandos:
+Para comenzar tendremos que instalar la imagen de la distribución de Linux Alpine, para esto utilizaremos el comando:
     
 ```bash
-sudo apt update
-sudo apt install apache2 \
-                 ghostscript \
-                 libapache2-mod-php \
-                 mysql-server \
-                 php \
-                 php-bcmath \
-                 php-curl \
-                 php-imagick \
-                 php-intl \
-                 php-json \
-                 php-mbstring \
-                 php-mysql \
-                 php-xml \
-                 php-zip
+docker pull alpine
 ```
 <br><br>
-Aquí una captura de pantalla de como debería verse la terminal mientras instalan las dependencias necesarias:
+Aquí una captura de pantalla de como debería verse la terminal mientras descargamos la imagen:
 
- ![Instalación de dependencias](imagenes/1.png)
+ ![Instalación de Alpine](Imagenes/1.png)
 
 <br><br>
 ## Instalación de WordPress
@@ -250,3 +236,4 @@ Project Link: [https://github.com/CabbaGG2/PSP_InstalacionWordPress](https://git
 ## Documentación
 
 * [Instala y Configura WordPress](https://ubuntu.com/tutorials/install-and-configure-wordpress#8-write-your-first-post)
+
