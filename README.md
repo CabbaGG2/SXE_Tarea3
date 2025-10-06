@@ -16,7 +16,7 @@ En este README se explicará brevemente a través de la linea de comandos como i
 
 * [Pruebas de conexión](#Pruebas-de-conexión)
 
-* [Creación de contenedor "dam_alp2" y conexión entre contenedores](#Creación-de-contenedor-"dam-alp2"-y-conexión-entre-contenedores)
+* [Creación de contenedor "dam_alp2" y conexión entre contenedores](#Creación-de-contenedor-"dam_alp2"-y-conexión-entre-contenedores)
 
 * [Propiedades y Características de las Imagenes y Contenedores](#Propiedades-y-Características-de-las-Imagenes-y-Contenedores)
 
@@ -210,6 +210,7 @@ Project Link: [https://github.com/CabbaGG2/PSP_InstalacionWordPress](https://git
 ## Documentación
 
 * [Instala y Configura WordPress](https://ubuntu.com/tutorials/install-and-configure-wordpress#8-write-your-first-post)
+
 
 
 
