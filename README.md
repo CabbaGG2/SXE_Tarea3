@@ -78,110 +78,54 @@ Captura de pantalla de como se ve la terminal con el comando:
  ![Creación de contenedor](Imagenes/4.png)
  <br><br>
 
- ## Configurar Apache para WordPress
+ ## Creación de Contenedor Alpine con nombre
 
-Creamos el sitio de Apache con el siguiente comando:
-
-```bash
-sudo nano /etc/apache2/sites-available/wordpress.conf
-```
-<br><br>
-Dentro del editor inyectamos las siguientes lineas de codigo:
+Se creará el contenedor "dam_alp1" con el siguiente comando:
 
 ```bash
-<VirtualHost *:80>
-    DocumentRoot /srv/www/wordpress
-    <Directory /srv/www/wordpress>
-        Options FollowSymLinks
-        AllowOverride Limit Options FileInfo
-        DirectoryIndex index.php
-        Require all granted
-    </Directory>
-    <Directory /srv/www/wordpress/wp-content>
-        Options FollowSymLinks
-        Require all granted
-    </Directory>
-</VirtualHost>
+docker container create -i -t --name dam_alp1 alpine
 ```
 <br><br>
-Guardamos con: Ctrl + O y cerramos con: Ctrl + X
-
-Captura de pantalla de como se ve el editor de texto del terminal:
-
- ![Configuración de apache](imagenes/3.png)
+Captura de pantalla de la vista desde terminal del comando:
+![Creación de contenedor dam_alp1](Imagenes/5.png)
 
 <br><br>
-Seguido modificaremos el archivo de configuración por defecto para agregar un Hostname al que el WordPress respondera sus llamadas. Este nombre de host debe estar mapeado a tu caja de alguna manera, por ejemplo, a través de DNS, o mediante ediciones en los sistemas del cliente. Hay que agregar ServerName como se ve el siguiente ejemplo:
+Para iniciar el contenedor utilizamos el siguiente comando:
 
 ```bash
-<VirtualHost *:80>
-    ServerName hostname.example.com
-    ... # the rest of the VHost configuration
-</VirtualHost>
+docker container start --attach -i dam_alp1
 ```
+<br><br>
+
+Captura de pantalla de la maquina virtual funcionando desde terminal:
+![Creación de contenedor dam_alp1](Imagenes/6.png)
 
 <br><br>
-Captura de pantalla agregando esta linea al archivo:
 
-![Configuración de apache](imagenes/6.png)
+## Pruebas de conexión 
 
-<br><br>
-Para finalizar la configuración del Apache, reiniciaremos el servicio para aplicar todos los cambios con el siguiente comando:
+Para averiguar el ping que tiene asignado el contenedor de Alpine se utilizará el siguiente comando dentro de la maquina virtual:
 
 ```bash
-sudo service apache2 reload
+ip addr
 ```
+<br><br>
+- Captura de pantalla de el resultado de el comando por terminal:
+
+![Prueba de ping](Imagenes/7.png)
+<br><br>
+Como podemos ver en la imagen, el ping del equipo virtual es: 127.0.0.1.
 
 <br><br>
-Captura de pantalla aplicando el comando:
-
-![Configuración de apache](imagenes/4.png)
-
-## Configurar la Base de Datos 
-
-Para configurar la base de datos primero tenemos que crearla en MySQL, utilizaremos los siguientes comandos:
+Para realizar un ping a Google utilizaremos el siguiente comando desde la terminal de el Alpine activo:
 
 ```bash
-$ sudo mysql -u root
-Welcome to the MySQL monitor.  Commands end with ; or \g.
-Your MySQL connection id is 7
-Server version: 5.7.20-0ubuntu0.16.04.1 (Ubuntu)
-
-Copyright (c) 2000, 2017, Oracle and/or its affiliates. All rights reserved.
-
-Oracle is a registered trademark of Oracle Corporation and/or its
-affiliates. Other names may be trademarks of their respective
-owners.
-
-Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
-
-mysql> CREATE DATABASE wordpress;
-Query OK, 1 row affected (0,00 sec)
-
-mysql> CREATE USER wordpress@localhost IDENTIFIED BY '<your-password>';
-Query OK, 1 row affected (0,00 sec)
-
-mysql> GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,ALTER
-    -> ON wordpress.*
-    -> TO wordpress@localhost;
-Query OK, 1 row affected (0,00 sec)
-
-mysql> FLUSH PRIVILEGES;
-Query OK, 1 row affected (0,00 sec)
-
-mysql> quit
-Bye
+ping -c 4 google.com
 ```
-<br><br>
-- Capturas de pantalla de la configuración de la base de datos:
+Captura de pantalla mostrando la respuesta del ping:
 
-![Configuración de BBDD](imagenes/5.png)
+![Prueba de ping](Imagenes/8.png)
 <br><br>
-![Configuración de BBDD](imagenes/7.png)
-<br><br>
-![Configuración de BBDD](imagenes/8.png)
-<br><br>
-![Configuracion de WordPress en BBDD](imagenes/9.png)
 
 ## Configuración de conneción de WordPress con la Base de Datos
 
@@ -260,6 +204,7 @@ Project Link: [https://github.com/CabbaGG2/PSP_InstalacionWordPress](https://git
 ## Documentación
 
 * [Instala y Configura WordPress](https://ubuntu.com/tutorials/install-and-configure-wordpress#8-write-your-first-post)
+
 
 
 
