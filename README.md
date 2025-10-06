@@ -12,15 +12,13 @@ En este README se explicará brevemente a través de la linea de comandos como i
 
 * [Creación de contenedor con Alpine](#Creación-de-contenedor-con-Alpine)
 
-* [Configurar Apache para WordPress](#Configurar-Apache-para-WordPress)
+* [Creación de Contenedor Alpine con nombre](#Creación-de-Contenedor-Alpine-con-nombre)
 
-* [Configurar la Base de Datos](#Configurar-la-Base-de-Datos)
+* [Pruebas de conexión](#Pruebas-de-conexión)
 
-* [Configurar la conexión entre la BBDD y WordPress](#Configuración-de-conneción-de-WordPress-con-la-Base-de-Datos)
+* [Creación de contenedor "dam_alp2" y conexión entre contenedores](#Creación-de-contenedor-"dam_alp2"-y-conexión-entre-contenedores)
 
-* [Configurar el WordPress](#Configuración-de-WordPress)
-
-* [Realizar tu Primer Post!](#Haz-tu-Primer-Post)
+* [Propiedades y Características de las Imagenes y Contenedores](#Propiedades-y-Características-de-las-Imagenes-y-Contenedores)
 
 * [Contacto](#Contacto)
 
@@ -212,6 +210,7 @@ Project Link: [https://github.com/CabbaGG2/PSP_InstalacionWordPress](https://git
 ## Documentación
 
 * [Instala y Configura WordPress](https://ubuntu.com/tutorials/install-and-configure-wordpress#8-write-your-first-post)
+
 
 
 
