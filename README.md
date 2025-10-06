@@ -167,29 +167,42 @@ ip addr
 ![Prueba de conexión](Imagenes/11.png)
 <br><br>
 
-## Configuración de WordPress 
-- Abre http://localhost/ en tu navegador(si estas utilizando una maquina cliente tienes que usar la direccion IP de la maquina servidor).
-- Se te pedirá el título de tu nuevo sitio, un nombre de usuario, una contraseña y una dirección de correo electrónico. Ten en cuenta que el nombre de usuario y la contraseña que elijas aquí son para WordPress, y no dan acceso a ninguna otra parte de tu servidor.
-- ⚠️:**Atención:** elige un nombre de usuario y una contraseña diferentes a las credenciales de MySQL (base de datos) que configuramos para el uso de WordPress, y diferentes a tus credenciales para iniciar sesión en el escritorio o la terminal de tu ordenador o servidor.
-- Puedes elegir si quieres que tu sitio sea indexado por los motores de búsqueda.
-<br><br>
-Capturas de pantalla con los pasos finales de configuración:
-![Configuracion de WordPress en BBDD](imagenes/13.png)
-<br><br>
-![Configuracion de WordPress en BBDD](imagenes/14.png)
-<br><br>
-![Configuracion de WordPress en BBDD](imagenes/15.png)
-<br><br>
-![Configuracion de WordPress en BBDD](imagenes/16.png)
-<br><br>
-![Configuracion de WordPress en BBDD](imagenes/17.png)
+## Propiedades y Características de las Imagenes y Contenedores
+
+-  Al cerrar el terminal con el comando "exit" se cierra la maquina de Alpine del terminal de la maquina que hayas cerrado, la otra maquina sigue operativa como se puede ver en la siguiente captura de pantalla:
 <br><br>
 
-## Haz tu Primer Post:
-- Borra el Post de "Hello World"
-- Para crear una nueva entrada, haz clic en el botón “Añadir nueva”. Verás un elegante editor WYSIWYG con opciones de formato de texto simples (pero potentes). Si lo prefieres, puedes cambiar al modo Texto para trabajar con HTML puro.
-* Captura de pantalla de un modelo de plantilla de WordPress personalizada:
-<img width="2496" height="1366" alt="image" src="https://github.com/user-attachments/assets/774b9d60-30ed-4df7-92d3-dc80873aa4c3" />
+Captura de pantalla:
+![propiedades_contenedores](Imagenes/12.png)
+<br><br>
+
+Como se puede ver en la imagen, la máquina "dam_alp1" fue cerrada hace 26 segundos mientras que la máquina "dam_alp2" lleva corriendo 10 minutos.
+<br><br>
+
+Para conocer el espacio en memoria local que ocupan las imágenes y contenedores utilizamos el siguiente comando:
+```bash
+docker system df
+```
+<br><br>
+
+Captura de pantalla:
+![propiedades_contenedores](Imagenes/13.png)
+<br><br>
+
+Podemos observer que las dos imagenes que tiene nuestro equipo hasta el momento ocupan un total de 12.99MB mientras que los contenedores, que son 5 hasta el momento, ocupan un total de 45.06KB.
+<br><br>
+
+- El comando que utilizaremos para saber el uso de RAM de los contenedores en marcha es:
+
+```bash
+docker stats
+```
+<br><br>
+
+Captura de pantalla:
+![propiedades_contenedores](Imagenes/14.png)
+<br><br>
+
 
 ## Contacto
 José Gregorio Cámara Depablos - [@CabbaGG](https://twitter.com/CabbaGG) - JOS.95camara@gmail.com
@@ -199,6 +212,7 @@ Project Link: [https://github.com/CabbaGG2/PSP_InstalacionWordPress](https://git
 ## Documentación
 
 * [Instala y Configura WordPress](https://ubuntu.com/tutorials/install-and-configure-wordpress#8-write-your-first-post)
+
 
 
 
