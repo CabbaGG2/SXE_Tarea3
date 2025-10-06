@@ -205,11 +205,13 @@ Captura de pantalla:
 ## Contacto
 José Gregorio Cámara Depablos - [@CabbaGG](https://x.com/Geek_Cabagge) - JOS.95camara@gmail.com
 
-Project Link: ([https://github.com/CabbaGG2/PSP_InstalacionWordPress/edit/main/README.md](https://github.com/CabbaGG2/SXE_Tarea3))
+Project Link: ([Instalación de Servicio con Docker](https://github.com/CabbaGG2/SXE_Tarea3))
 
 ## Documentación
 
-* [Instala y Configura WordPress](https://ubuntu.com/tutorials/install-and-configure-wordpress#8-write-your-first-post)
+* [Docker Tutorial: Get Going From Scratch](https://stackify.com/docker-tutorial/)
+* [Documentación de Docker](https://docs.docker.com/get-started/)
+
 
 
 
