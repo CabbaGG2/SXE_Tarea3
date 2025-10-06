@@ -127,49 +127,44 @@ Captura de pantalla mostrando la respuesta del ping:
 ![Prueba de ping](Imagenes/8.png)
 <br><br>
 
-## Configuración de conneción de WordPress con la Base de Datos
+## Creación de contenedor "dam_alp2" y conexión entre contenedores
 
-Ahora tenemos que configurar el WordPress para que use la base de datos. Primero copiaremos la archivo de configuración de ejemplo a "wp-config.php":
+Para crear el segundo contenedor utilizaremos el siguiente comando:
+
 ```bash
-sudo -u www-data cp /srv/www/wordpress/wp-config-sample.php /srv/www/wordpress/wp-config.php
+docker run -it --name dam_alp2 alpine
 ```
 <br><br>
 
-A continuación, establece las credenciales de la base de datos en el archivo de configuración (no reemplaces database_name_here ni username_here en los comandos de abajo. Sí reemplaza <your-password> con la contraseña de tu base de datos):
+A diferencia de "docker create", "docker run" crea el contenedor y lo inicializa automaticamente.
+
+<br><br>
+
+Captura de pantalla mostrando la creación del contenedor:
+
+![Creacion de contenedor](Imagenes/9.png)
+<br><br>
+
+Iniciamos ambos contenedores en distintos terminales, como se puede ver en la siguiente captura de pantalla:
+
+![Creacion de contenedor](Imagenes/10.png)
+<br><br>
+
+Utilizamos el comando ping de una maquina a la otra para probar la conexión interna:
+
 ```bash
-sudo -u www-data sed -i 's/database_name_here/wordpress/' /srv/www/wordpress/wp-config.php
-sudo -u www-data sed -i 's/username_here/wordpress/' /srv/www/wordpress/wp-config.php
-sudo -u www-data sed -i 's/password_here/<your-password>/' /srv/www/wordpress/wp-config.php
+ping <aqui va la dirección ip de la maquina a la que quieres conectar>
 ```
 <br><br>
 
-Para terminar, abrimos una sesion para configurar el siguiente archivo con nano:
+para saber la dirección ip de la maquina a conectar utilizaremos el comando:
+
 ```bash
-sudo -u www-data nano /srv/www/wordpress/wp-config.php
+ip addr
 ```
 <br><br>
 
-Hay que buscar las siguientes líneas:
-```bash
-define( 'AUTH_KEY',         'put your unique phrase here' );
-define( 'SECURE_AUTH_KEY',  'put your unique phrase here' );
-define( 'LOGGED_IN_KEY',    'put your unique phrase here' );
-define( 'NONCE_KEY',        'put your unique phrase here' );
-define( 'AUTH_SALT',        'put your unique phrase here' );
-define( 'SECURE_AUTH_SALT', 'put your unique phrase here' );
-define( 'LOGGED_IN_SALT',   'put your unique phrase here' );
-define( 'NONCE_SALT',       'put your unique phrase here' );
-```
-<br><br>
-
-Elimina esas líneas (ctrl+k borrará una línea cada vez que presiones la combinación). Luego reemplázalas con el contenido de **[aqui](https://api.wordpress.org/secret-key/1.1/salt/.)** (Esa dirección es un generador aleatorio que devuelve claves completamente aleatorias cada vez que se abre). Este paso es importante para asegurarte de que tu sitio no sea vulnerable a ataques de “secretos conocidos”.
-<br><br>
-
-Guarda y cierra el archivo con los comandos Ctrl + X seguido de ENTER.
-- Captura de pantalla con los comandos por terminal:
-![Configuracion de WordPress en BBDD](imagenes/10.png)
-- Captura de pantalla con los cambios realizados en las líneas señaladas anteriormente:
-![Configuracion de WordPress en BBDD](imagenes/11.png)
+![Prueba de conexión](Imagenes/11.png)
 <br><br>
 
 ## Configuración de WordPress 
@@ -204,6 +199,7 @@ Project Link: [https://github.com/CabbaGG2/PSP_InstalacionWordPress](https://git
 ## Documentación
 
 * [Instala y Configura WordPress](https://ubuntu.com/tutorials/install-and-configure-wordpress#8-write-your-first-post)
+
 
 
 
